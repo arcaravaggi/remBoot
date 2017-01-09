@@ -6,6 +6,9 @@
 \usage{
 boot_sd(x)
 }
+\arguments{
+\item{x}{= bsD resampled data}
+}
 \description{
 Resamples camera trap data to calculate variance for Random Encounter Model density estimates. Note that tm and v must be the same across all sites. If this is not the case, split your data before bootstrapping and run the function on each sub-group. Called by remsD. Calls bsD.
 }

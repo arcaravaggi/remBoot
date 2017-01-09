@@ -7,7 +7,7 @@
 res_dat(.df)
 }
 \arguments{
-\item{df}{= the data frame}
+\item{.df}{= the data frame}
 }
 \description{
 Use known row number to tell function how many data to resample in each iteration

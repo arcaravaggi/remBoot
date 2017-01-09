@@ -1,5 +1,5 @@
 ---
-title: "Density estimation via Random Encounter Modelling"
+title: "remBoot User Guide"
 author: "Anthony Caravaggi (@thonoir; arcaravaggi.co.uk)"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -16,7 +16,7 @@ remBoot is an implementation of the Random Encounter Model (REM) developed by Ro
 
 ## Example
 
-Read the provided data file. These data are from a study of hares in Northern Ireland, published as Caravaggi et al. (2016). The first 5 columns of any data set must follow the same format in terms of column contents.
+Read the packaged data file. These data are from a study of hares in Northern Ireland, published as Caravaggi et al. (2016). The first 5 columns of any data set must follow the same format in terms of column contents.
 
 ```{r include = TRUE}
 
@@ -47,10 +47,9 @@ tapply(hDat[,4], hDat[,1], length)
 sum(tapply(hDat[,4], hDat[,1], length)) == nrow(hDat) 
 ```
 
-We'll use two functions to split the data according to survey site (__res_dat__) and store the number of rows for each site (__split_dat__). These data will be used for iterative resampling during bootstrapping. The first step MUST be called grpSize as it is used in the core REM function.
+We'll use two functions to split the data according to survey site (__split_dat__) and store the number of rows. These data will be used for iterative resampling during bootstrapping.
 
 ```{r include = TRUE}
-grpSize <- res_dat(hDat)
 
 grpDat <- split_dat(hDat)
 
@@ -113,15 +112,23 @@ remsSD
 ```
 
 
-Alternatively, we can forgo all the above and use the __remBoot__ function to split and group data and calculate variance (SD and/or 95% confidence intervals) in one go. __remBoot__ requires that all sites have the same values for tm and v. 
+Alternatively, we can forgo all the above and use the __remBoot__ function to split and group data and calculate variance (SD and/or 95% confidence intervals) in one go. __remBoot__ requires that all sites have the same values for tm and v. As before, we'll define tm and v a priori:
+
+```{r include = TRUE}
+tm <- 1880
+v <- 0.89
+```
+
 
 ```{r include = TRUE}
 output <- remBoot(hDat, tm, v, nboots, error_stat = c("sd"))
 output
 ```
 
+Alternatively, we could pass the values to the function directly.
+
 ```{r include = TRUE}
-output <- remBoot(hDat, tm, v, nboots, error_stat = c("ci"))
+output <- remBoot(hDat, tm = 2870, v = 1.8, nboots, error_stat = c("ci"))
 output
 ```
 

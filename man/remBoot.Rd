@@ -2,11 +2,13 @@
 % Please edit documentation in R/remBoot.R
 \name{remBoot}
 \alias{remBoot}
-\title{Random Encounter Model bootstrapping function}
+\title{Random Encounter Model bootstrapping for error terms}
 \usage{
 remBoot(.df, tm, v, nboots, error_stat)
 }
 \arguments{
+\item{.df}{= the data frame}
+
 \item{tm}{= camera hours}
 
 \item{v}{= distance travelled in 24 hours (km)}
@@ -14,11 +16,12 @@ remBoot(.df, tm, v, nboots, error_stat)
 \item{nboots}{= number of bootstrap iterations}
 
 \item{error_stat}{= confidence intervals (ci) or standard deviation (sd)}
-
-\item{df}{= the data frame}
 }
 \description{
 This function allows the automated calculation of variance for animal densities estimates derived from Random Encounter Modelling.
+}
+\details{
+For an example of how to use remBoot, click (\href{http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html}{here}).
 }
 \examples{
 output <- remBoot(remDat, tm, v, nboots, error_stat = c("sd"))

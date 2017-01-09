@@ -23,6 +23,8 @@ The function assumes that the first 5 columns are:
 3) number of individuals in each capture
 4) distance to animal (in metres)
 5) angle of detection (in radians).
+
+For an example of how to use rem, click (\href{http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html}{here}).
 }
 \examples{
 

@@ -2,7 +2,7 @@
 #' 
 #' Use known row number to tell function how many data to resample in each iteration
 #' 
-#' @param df = the data frame
+#' @param .df = the data frame
 #' @export
 #' @examples 
 #' 
