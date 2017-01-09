@@ -1,5 +1,5 @@
 # remBoot
-An R package for estimating animal densities and variance from camera trap data using Random Encounter Modelling.
+An R package for estimating animal densities and variance from camera trap data using Random Encounter Modelling. An example can be found at http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html
 
 # License
 
