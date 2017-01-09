@@ -1,6 +1,6 @@
-#' Data Splitting function
+#' Data splitting for grpDat
 #' 
-#' Separate data into groups prior to bootstrapping
+#' Separate data into groups prior to bootstrapping. Calls grpDat_func.
 #' 
 #' @param .df = the data frame
 #' @export

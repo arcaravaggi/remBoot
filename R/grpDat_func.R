@@ -1,6 +1,6 @@
-#' Pass to split_dat
+#' Required for split_dat
 #' 
-#' Separate data into groups prior to bootstrapping
+#' Separate data into groups prior to bootstrapping. Called by split_dat.
 #' 
 #' @param df = the data frame
 #' @param x = group (site), derived from df

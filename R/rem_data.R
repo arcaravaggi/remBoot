@@ -1,4 +1,4 @@
-#' Simulated data for REM density estimation
+#' Example data for REM density estimation
 #' 
 #' Simulated camera trap detection data for density estimation via Random Encounter Models (Rowcliffe et al, 2008). Real data used with the remBoot package should adhere to the same file structure in the first five columns - survey site, camera number, number of individuals in each capture, distance to capture, angle of detection.
 #' 

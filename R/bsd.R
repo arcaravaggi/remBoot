@@ -1,6 +1,6 @@
-#' Bootstrap function for REM variance
+#' Required for remsD bootstrapping
 #' 
-#' Resamples camera trap data to calculate variance for Random Encounter Model density estimates. This function is called by remsD (see example, below).
+#' Resamples camera trap data to calculate variance for Random Encounter Model density estimates. Called by remsD.
 #' 
 #' @param dat = the data frame
 #' @param tm = camera hours

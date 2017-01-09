@@ -3,7 +3,7 @@
 \docType{data}
 \name{hDat}
 \alias{hDat}
-\title{Simulated data for REM density estimation}
+\title{Example data for REM density estimation}
 \format{An object of class \code{data.frame} with 118 rows and 5 columns.}
 \source{
 From data published as Caravaggi et al. (2016) Remote Sensing in Ecology and Conservation 2:45-58

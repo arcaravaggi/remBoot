@@ -1,4 +1,4 @@
-#' Data Splitting function
+#' Data splitting for grpSize
 #' 
 #' Use known row number to tell function how many data to resample in each iteration
 #' 
@@ -10,7 +10,7 @@
 #' tapply(.df[,4], .df[,1], length)
 #' }
 #' 
-#' grpSize <- res_dat(dat)
+#' grpSize <- res_dat(df)
 
 
 res_dat <- function(.df) {

@@ -2,7 +2,7 @@
 % Please edit documentation in R/bsd.R
 \name{bsD}
 \alias{bsD}
-\title{Bootstrap function for REM variance}
+\title{Required for remsD bootstrapping}
 \usage{
 bsD(dat, tm, v)
 }
@@ -14,7 +14,7 @@ bsD(dat, tm, v)
 \item{v}{= distance travelled in 24 hours (km)}
 }
 \description{
-Resamples camera trap data to calculate variance for Random Encounter Model density estimates. This function is called by remsD (see example, below).
+Resamples camera trap data to calculate variance for Random Encounter Model density estimates. Called by remsD.
 }
 \examples{
 

@@ -1,6 +1,6 @@
-#' Bootstrapping for Standard Deviations
+#' Required for remsD bootstrapping
 #' 
-#' Called my remsD. Note that tm and v must be the same across all sites. If this is not the case, split your data before bootstrapping and run the function on each sub-group
+#' Resamples camera trap data to calculate variance for Random Encounter Model density estimates. Note that tm and v must be the same across all sites. If this is not the case, split your data before bootstrapping and run the function on each sub-group. Called by remsD. Calls bsD.
 #' @export
 #' @examples 
 #' boot_sd <-  function(x){

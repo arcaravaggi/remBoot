@@ -2,7 +2,7 @@
 % Please edit documentation in R/res_dat.R
 \name{res_dat}
 \alias{res_dat}
-\title{Data Splitting function}
+\title{Data splitting for grpSize}
 \usage{
 res_dat(.df)
 }
@@ -18,6 +18,6 @@ res_dat <- function(.df) {
 tapply(.df[,4], .df[,1], length)
 }
 
-grpSize <- res_dat(dat)
+grpSize <- res_dat(df)
 }
 

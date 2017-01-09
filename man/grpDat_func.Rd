@@ -2,7 +2,7 @@
 % Please edit documentation in R/grpDat_func.R
 \name{grpDat_func}
 \alias{grpDat_func}
-\title{Pass to split_dat}
+\title{Required for split_dat}
 \usage{
 grpDat_func(df, x)
 }
@@ -12,7 +12,7 @@ grpDat_func(df, x)
 \item{x}{= group (site), derived from df}
 }
 \description{
-Separate data into groups prior to bootstrapping
+Separate data into groups prior to bootstrapping. Called by split_dat.
 }
 \examples{
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/split_dat.R
 \name{split_dat}
 \alias{split_dat}
-\title{Data Splitting function}
+\title{Data splitting for grpDat}
 \usage{
 split_dat(.df)
 }
@@ -10,7 +10,7 @@ split_dat(.df)
 \item{.df}{= the data frame}
 }
 \description{
-Separate data into groups prior to bootstrapping
+Separate data into groups prior to bootstrapping. Calls grpDat_func.
 }
 \examples{
 
