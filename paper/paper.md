@@ -42,4 +42,9 @@ Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating anim
 
 
 ![REM diagram](REM_diagram.jpg)
-__Figure 1.__ Data input (y and t) and parameters (r, ? and v) required for the calculation of population density estimates from camera trap data by the Random Encounter Model (REM). g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = distance travelled in 24 hours; r = radial distance to the target; and, ? = zone of detection.
+
+__Figure 1.__ Data input (y and t) and parameters (r, theta and v) required for the calculation of population density estimates from camera trap data by the Random Encounter Model (REM). g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = distance travelled in 24 hours; r = radial distance to the target; and, ? = zone of detection.
+
+![Density plot](density_plot.jpg)
+
+__Figure 2.__ Animal densities (individuals.km2) with associated variances (SD) calculated via Random Encounter Models, using remBoot.
