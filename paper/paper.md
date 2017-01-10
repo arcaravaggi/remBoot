@@ -27,7 +27,7 @@ The Random Encounter Model (REM) allows researchers to calculate population dens
 
 Density (D) is linearly scaled with trapping rate, based on two biological variables and two camera characteristics: g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = average distance travelled by the species in 24 hours; r = radial distance to the animal; and, ? = zone of detection (Fig. 1; Rowcliffe et al., 2008). 
 
-remBoot is the first package to implement REM calculations in R. The package also contains functions which allow the calculation of variance (standard deviation [SD] and/or 95% confidence intervals [CI]). These calculations are computationally inexpensive and can be applied to datasets of considerable size. Densities and associated variances can be calculated for one or more sites concurrently, streamlining the analytical process.
+remBoot is the first package to implement REM calculations in R. The package also contains functions which allow the calculation of variance (standard deviation [SD] and/or 95% confidence intervals [CI]; Fig. 2). These calculations are computationally inexpensive and can be applied to datasets of considerable size. Densities and associated variances can be calculated for one or more sites concurrently, streamlining the analytical process.
 
 ##References
 
@@ -45,6 +45,6 @@ Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating anim
 
 __Figure 1.__ Data input (y and t) and parameters (r, theta and v) required for the calculation of population density estimates from camera trap data by the Random Encounter Model (REM). g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = distance travelled in 24 hours; r = radial distance to the target; and, ? = zone of detection.
 
-![Density plot](density_plot.jpg)
+![Density plot](density_plot.png)
 
 __Figure 2.__ Animal densities (individuals.km2) with associated variances (SD) calculated via Random Encounter Models, using remBoot.
