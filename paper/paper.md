@@ -19,7 +19,7 @@ date: 10 January 2017
 
 __Software Repository:__	https://github.com/arcaravaggi/remBoot
 
-__Software Archive:__	http://dx.doi.org/ 10.6084/m9.figshare.4536065
+__Software Archive:__	http://dx.doi.org/10.6084/m9.figshare.4536065
 
 ##Summary
 
