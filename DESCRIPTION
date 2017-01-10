@@ -9,6 +9,8 @@ Description: An implementation of the Random Encounter Model method of
 Depends:
     R (>= 3.3.1)
 License: GPL-3
+URL: http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html 
+BugReports: https://github.com/arcaravaggi/remBoot/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1

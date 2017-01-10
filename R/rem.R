@@ -9,6 +9,8 @@
 #' 4) distance to animal (in metres)
 #' 5) angle of detection (in radians). 
 #' 
+#' For an example of how to use rem, click (\href{http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html}{here}).
+#' 
 #' @param dat = the data frame
 #' @param tm = camera hours
 #' @param v = distance travelled in 24 hours (km)

@@ -1,8 +1,10 @@
-#' Random Encounter Model bootstrapping function
+#' Random Encounter Model bootstrapping for error terms
 #' 
 #' This function allows the automated calculation of variance for animal densities estimates derived from Random Encounter Modelling. 
 #' 
-#' @param df = the data frame
+#' For an example of how to use remBoot, click (\href{http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html}{here}).
+#' 
+#' @param .df = the data frame
 #' @param tm = camera hours
 #' @param v = distance travelled in 24 hours (km)
 #' @param nboots = number of bootstrap iterations
@@ -17,7 +19,6 @@ remBoot <- function(.df, tm, v, nboots, error_stat){
     ## Written by Kevin Keenan 2013 and Anthony Caravaggi 2016
     ## distributed under GPL3
     grpDat <- split_dat(.df)
-    grpSize <- res_dat(.df)
     remsD <- lapply(grpDat, boot_sd)
     res <- list()
     if(is.element("sd", error_stat)){
