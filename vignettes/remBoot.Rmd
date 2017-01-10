@@ -12,11 +12,11 @@ vignette: >
 
 ## remBoot Introduction
 
-remBoot is an implementation of the Random Encounter Model (REM) developed by Rowcliffe et al. (2008). The REM is based on brownian motion and allows the estimation of animal densities for a given survey area. The REM is particularly useful in that species do not need to be marked or exhibit individual markings for estimates to be calculated. This package contains a number of functions which allow the user to calculate densities for one or more sites and bootstrap their data to calculate variance. 
+remBoot is an implementation of the Random Encounter Model (REM) developed by Rowcliffe _et al._ (2008). The REM is based on brownian motion and allows the estimation of animal densities for a given survey area. The REM is particularly useful in that species do not need to be marked or exhibit individual markings for estimates to be calculated. This package contains a number of functions which allow the user to calculate densities for one or more sites and bootstrap their data to calculate variance. 
 
 ## Example
 
-Read the packaged data file. These data are from a study of hares in Northern Ireland, published as Caravaggi et al. (2016). The first 5 columns of any data set must follow the same format in terms of column contents.
+Read the packaged data file. These data are from a study of hares in Northern Ireland, published as Caravaggi _et al._ (2016). The first 5 columns of any data set must follow the same format in terms of column contents.
 
 ```{r include = TRUE}
 
