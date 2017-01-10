@@ -23,7 +23,7 @@ __Software Archive:__	http://dx.doi.org/10.6084/m9.figshare.4536065
 
 ##Summary
 
-The Random Encounter Model (REM) allows researchers to calculate population densities from camera trap data for species which do no exhibit individually-identifiable markings (Rowcliffe et al., 2008) such as tapir (Tapirus terrestris; Oliveira-Santos et al. 2010), pine marten (Martes martes; Manzo et al. 2011), and hares (Lepus sp.; Caravaggi et al. 2016).. The REM is based on Brownian motion, and makes three assumptions: i) animal movements are random in the landscape; ii) detections are independent contacts between animals and cameras; and iii) the focal population is closed (Rowcliffe et al., 2008). Any study investigating wild populations will undoubtedly violate one or more of these assumptions. For example, wild populations are rarely closed, and animal movements are never truly random. The REM is relatively robust against certain violations, however (Rowcliffe et al. 2008; Manzo et al. 2011; Rowcliffe et al., 2012).
+The Random Encounter Model (REM) allows researchers to calculate population densities from camera trap data for species which do no exhibit individually-identifiable markings (Rowcliffe et al., 2008) such as tapir (_Tapirus terrestris_; Oliveira-Santos et al. 2010), pine marten (_Martes martes_; Manzo et al. 2011), and hares (_Lepus_ sp.; Caravaggi et al. 2016). 
 
 Density (D) is linearly scaled with trapping rate, based on two biological variables and two camera characteristics: g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = average distance travelled by the species in 24 hours; r = radial distance to the animal; and, ? = zone of detection (Fig. 1; Rowcliffe et al., 2008). 
 
@@ -38,8 +38,6 @@ Manzo, E., Bartolommei, P., Rowcliffe, J.M. and Cozzolino, R. (2011). Estimation
 Oliveira-Santos, L.G.R., Zucco, C.A., Antunes, P.C. and Crawshaw, P.G. (2010). Is it possible to individually identify mammals with no natural markings using camera-traps? A controlled case-study with lowland tapirs. Mamm Biol. 75, 375 – 378. [DOI: 10.1016/j.mambio.2009.08.005](10.1016/j.mambio.2009.08.005)
 
 Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating animal density using camera traps without the need for individual recognition. J Appl Ecol. 45, 1228 – 1236. [DOI: 10.1111/j.1365-2664.2008.01473.x] (http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01473.x/abstract)
-
-Rowcliffe, J.M., Carbone, C. Kays, R., Kranstauber, B. and Jansen, P.A. (2012). Bias in estimating animal travel distance: the effect of sampling frequency. Methods Ecol Evol. 3, 653 – 662. [DOI: 10.1111/j.2041-210X.2012.00197.x](http://onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2012.00197.x/abstract)
 
 
 
