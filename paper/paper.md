@@ -12,12 +12,13 @@ authors:
    orcid: 0000-0002-1763-8970
    affiliation: 1
 affiliations:
- - name: School of Biological Sciences, Queen’s University Belfast, Belfast BT9 7BL, UK
+ - name: School of Biological Sciences, Queenâ€™s University Belfast, Belfast BT9 7BL, UK
    index: 1
 date: 10 January 2017
 ---
 
 __Software Repository:__	https://github.com/arcaravaggi/remBoot
+
 __Software Archive:__	http://dx.doi.org/ 10.6084/m9.figshare.4536065
 
 ##Summary
@@ -32,13 +33,13 @@ remBoot is the first package to implement REM calculations in R. The package als
 
 Caravaggi, A., Zaccaroni, M., Riga, F., Schai-Braun, S.C., Dick, J.T., Montgomery, W.I. and Reid, N. (2016). An invasive-native mammalian species replacement process captured by camera trap survey random encounter models. Rem Sens Ecol Cons. 2, 45-58. [DOI: 10.1002/rse2.11](http://onlinelibrary.wiley.com/doi/10.1002/rse2.11/abstract)
 
-Manzo, E., Bartolommei, P., Rowcliffe, J.M. and Cozzolino, R. (2011). Estimation of population density of European pine marten in central Italy using camera trapping. Acta Theriol. 57, 165 – 172. [DOI: 10.1007/s13364-011-0055-8](http://link.springer.com/article/10.1007/s13364-011-0055-8)
+Manzo, E., Bartolommei, P., Rowcliffe, J.M. and Cozzolino, R. (2011). Estimation of population density of European pine marten in central Italy using camera trapping. Acta Theriol. 57, 165 â€“ 172. [DOI: 10.1007/s13364-011-0055-8](http://link.springer.com/article/10.1007/s13364-011-0055-8)
 
-Oliveira-Santos, L.G.R., Zucco, C.A., Antunes, P.C. and Crawshaw, P.G. (2010). Is it possible to individually identify mammals with no natural markings using camera-traps? A controlled case-study with lowland tapirs. Mamm Biol. 75, 375 – 378. [DOI: 10.1016/j.mambio.2009.08.005](10.1016/j.mambio.2009.08.005)
+Oliveira-Santos, L.G.R., Zucco, C.A., Antunes, P.C. and Crawshaw, P.G. (2010). Is it possible to individually identify mammals with no natural markings using camera-traps? A controlled case-study with lowland tapirs. Mamm Biol. 75, 375 â€“ 378. [DOI: 10.1016/j.mambio.2009.08.005](10.1016/j.mambio.2009.08.005)
 
-Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating animal density using camera traps without the need for individual recognition. J Appl Ecol. 45, 1228 – 1236. [DOI: 10.1111/j.1365-2664.2008.01473.x] (http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01473.x/abstract)
+Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating animal density using camera traps without the need for individual recognition. J Appl Ecol. 45, 1228 â€“ 1236. [DOI: 10.1111/j.1365-2664.2008.01473.x] (http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01473.x/abstract)
 
-Rowcliffe, J.M., Carbone, C. Kays, R., Kranstauber, B. and Jansen, P.A. (2012). Bias in estimating animal travel distance: the effect of sampling frequency. Methods Ecol Evol. 3, 653 – 662. [DOI: 10.1111/j.2041-210X.2012.00197.x](http://onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2012.00197.x/abstract)
+Rowcliffe, J.M., Carbone, C. Kays, R., Kranstauber, B. and Jansen, P.A. (2012). Bias in estimating animal travel distance: the effect of sampling frequency. Methods Ecol Evol. 3, 653 â€“ 662. [DOI: 10.1111/j.2041-210X.2012.00197.x](http://onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2012.00197.x/abstract)
 
 
 
