@@ -25,7 +25,7 @@ __Software Archive:__	http://dx.doi.org/10.6084/m9.figshare.4536065
 
 The Random Encounter Model (REM) allows researchers to calculate population densities from camera trap data for species which do no exhibit individually-identifiable markings (Rowcliffe et al., 2008) such as tapir (_Tapirus terrestris_; Oliveira-Santos et al. 2010), pine marten (_Martes martes_; Manzo et al. 2011), and hares (_Lepus_ sp.; Caravaggi et al. 2016). 
 
-Density (D) is linearly scaled with trapping rate, based on two biological variables and two camera characteristics: _g_ = average animal group size; _y_ = number of detections; _t_ = survey effort (i.e. camera hours); _v_ = average distance travelled by the species in 24 hours; _r_ = radial distance to the animal; and, $\Theta$ = zone of detection (Fig. 1; Rowcliffe et al., 2008). 
+Density (D) is linearly scaled with trapping rate, based on two biological variables and two camera characteristics: _g_ = average animal group size; _y_ = number of detections; _t_ = survey effort (i.e. camera hours); _v_ = average distance travelled by the species in 24 hours; _r_ = radial distance to the animal; and, theta = zone of detection (Fig. 1; Rowcliffe et al., 2008). 
 
 remBoot is the first package to implement REM calculations in R. The package also contains functions which allow the calculation of variance (standard deviation [SD] and/or 95% confidence intervals [CI]; Fig. 2). These calculations are computationally inexpensive and can be applied to datasets of considerable size. Densities and associated variances can be calculated for one or more sites concurrently, streamlining the analytical process.
 
@@ -43,7 +43,7 @@ Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating anim
 
 ![REM diagram](REM_diagram.jpg)
 
-__Figure 1.__ Data input (y and t) and parameters (r, theta and v) required for the calculation of population density estimates from camera trap data by the Random Encounter Model (REM). g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = distance travelled in 24 hours; r = radial distance to the target; and, ? = zone of detection.
+__Figure 1.__ Data input (y and t) and parameters (r, theta and v) required for the calculation of population density estimates from camera trap data by the Random Encounter Model (REM). g = average animal group size; y = number of detections; t = survey effort (i.e. camera hours); v = distance travelled in 24 hours; r = radial distance to the target; and, theta = zone of detection.
 
 ![Density plot](density_plot.png)
 
