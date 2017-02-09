@@ -4,7 +4,7 @@
 #' 
 #' @param .df = the data frame
 #' @export
-#' @examples 
+#' @examples
 #' 
 #' ## Read data:
 #' data(hDat)

@@ -4,7 +4,6 @@
 #' 
 #' @param df = the data frame
 #' @param x = group (site), derived from df
-#' @export
 #' @examples 
 #' 
 #' grpDat_func <- function(df, x){
