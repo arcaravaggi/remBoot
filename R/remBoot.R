@@ -4,15 +4,25 @@
 #' 
 #' For an example of how to use remBoot, click (\href{http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html}{here}).
 #' 
-#' @param .df = the data frame
-#' @param tm = camera hours
-#' @param v = distance travelled in 24 hours (km)
-#' @param nboots = number of bootstrap iterations
-#' @param error_stat = confidence intervals (ci) or standard deviation (sd)
+#' @param .df (data frame)
+#' @param tm (numeric) The total number of hours all cameras were left in-situ at a focal site
+#' @param v (numeric) The distance travelled by the focal species in 24 hours, in kilometres
+#' @param nboots (numeric) The number of bootstrap iterations
+#' @param error_stat (text) Variance, given as confidence intervals (ci) or standard deviation (sd)
 #' @keywords density, population, random encounter model, bootstrap
 #' @export
 #' @examples
-#' output <- remBoot(remDat, tm, v, nboots, error_stat = c("sd"))
+#' ## Define tm, v and nboots and pass the values to the function:
+#' 
+#' tm <- 1800
+#' v <- 0.89
+#' nboots <- 1000
+#' 
+#' output <- remBoot(.df, tm, v, nboots, error_stat = c("sd"))
+#' 
+#' ## Alternatively, pass the values to the function, directly:
+#' 
+#' output <- remBoot(hDat, tm = 1800, v = 0.89, nboots, error_stat = c("ci"))
 
 
 remBoot <- function(.df, tm, v, nboots, error_stat){
