@@ -5,10 +5,8 @@
 #' @export
 #' @examples 
 #' ## Define the number of bootstrapping iterations and apply boot_sd to the data:
-#' nboots <- 1000#' 
+#' nboots <- 1000
 #' remsD <- lapply(grpDat, boot_sd)
-#' 
-#' ## Calculate variance (Standard Deviation)
 #' remsSD <- lapply(remsD, sd)
 #' remsSD
 
