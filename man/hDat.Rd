@@ -4,7 +4,7 @@
 \name{hDat}
 \alias{hDat}
 \title{Example data for REM density estimation}
-\format{An object of class \code{data.frame} with 118 rows and 5 columns.}
+\format{An object of class \code{data.frame} with 118 rows and 4 columns.}
 \source{
 From data published as Caravaggi et al. (2016) Remote Sensing in Ecology and Conservation 2:45-58
 (\href{http://onlinelibrary.wiley.com/doi/10.1002/rse2.11/abstract}{RSEC})

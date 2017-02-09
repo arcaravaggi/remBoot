@@ -7,17 +7,21 @@
 split_dat(.df)
 }
 \arguments{
-\item{.df}{= the data frame}
+\item{.df}{(data frame)}
 }
 \description{
 Separate data into groups prior to bootstrapping. Calls grpDat_func.
 }
 \examples{
 
-split_dat <- function(.df) {
-  lapply(unique(.df[[1]]), grpDat_func, df = .df)
-}
+## Read data:
+data(hDat)
 
+## Split data by survey site:
 grpDat <- split_dat(dat)
+
+## Check that function has performed correctly:
+lapply(grpDat, head)
+lapply(grpDat, nrow)
 }
 

@@ -13,11 +13,12 @@ boot_sd(x)
 Resamples camera trap data to calculate variance for Random Encounter Model density estimates. Note that tm and v must be the same across all sites. If this is not the case, split your data before bootstrapping and run the function on each sub-group. Called by remsD. Calls bsD.
 }
 \examples{
-boot_sd <-  function(x){
-d <- replicate(nboots, bsD(x, tm, v)) 
-return(d)
-}
-
+## Define the number of bootstrapping iterations and apply boot_sd to the data:
+nboots <- 1000#' 
 remsD <- lapply(grpDat, boot_sd)
+
+## Calculate variance (Standard Deviation)
+remsSD <- lapply(remsD, sd)
+remsSD
 }
 
