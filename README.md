@@ -1,5 +1,30 @@
 # remBoot
-An R package for estimating animal densities and variance from camera trap data using Random Encounter Modelling. An example can be found at http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html
+
+remBoot is an implementation of the Random Encounter Model (REM) developed by Rowcliffe _et al._ (2008). The REM is based on brownian motion and allows the estimation of animal densities for a given survey area. The REM is particularly useful in that species do not need to be marked or exhibit individual markings for estimates to be calculated. This package contains a number of functions which allow the user to calculate densities for one or more sites and bootstrap their data to calculate variance.   
+
+
+An example can be found at http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html  
+
+# Installation
+
+To install remBoot from the GitHub repo, use the following commands:  
+
+install.packages("githubinstall")  
+library(githubinstall)  
+githubinstall("remBoot")  
+
+# Development
+
+## Contributions
+
+Contributors are welcome to fork the package and suggest additions or improvements.  
+
+#### I found a bug
+
+Please report it to the [issue tracker][issues]. Please provide specific details, allowing the error to be reproduced and investigated. Always note the version of R you are using, along with any other relevant software (e.g. RStudio).  
+
+[issues]: https://github.com/arcaravaggi/remBoot/issues
+
 
 # License
 
