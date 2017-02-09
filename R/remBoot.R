@@ -31,6 +31,7 @@
 #' output <- remBoot(hDat, tm = 1800, v = 0.89, nboots, error_stat = c("ci"))
 
 
+
 remBoot <- function(.df, tm, v, nboots, error_stat){
     ## Written by Kevin Keenan 2013 and Anthony Caravaggi 2016
     ## distributed under GPL3
