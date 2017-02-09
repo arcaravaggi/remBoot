@@ -1,6 +1,12 @@
 #' Random Encounter Model bootstrapping for error terms
 #' 
 #' This function allows the automated calculation of variance for animal densities estimates derived from Random Encounter Modelling. 
+#'
+#' The function assumes that the first 4 columns of the dataset contain: 
+#' 1) An identifying number for each survey location (e.g. 1, 2, 3)
+#' 2) The number of individuals of the focal species observed in each capture
+#' 3) The radial distance to the detected animal in each capture, given in metres
+#' 4) The angle of detection based on the location of the detected animal in each capture, given in radians
 #' 
 #' For an example of how to use remBoot, click (\href{http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html}{here}).
 #' 
