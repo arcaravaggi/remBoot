@@ -1,6 +1,14 @@
 # remBoot
 An R package for estimating animal densities and variance from camera trap data using Random Encounter Modelling. An example can be found at http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html
 
+# Installation
+
+To install remBoot from the GitHub repo, use the following commands:
+
+install.packages("githubinstall")
+library(githubinstall)
+githubinstall("remBoot")
+
 # License
 
 This package is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, version 3, as published by the Free Software Foundation.
