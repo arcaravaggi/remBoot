@@ -12,7 +12,7 @@
 
 <meta name="author" content="Anthony Caravaggi (@thonoir; arcaravaggi.co.uk)" />
 
-<meta name="date" content="2017-01-10" />
+<meta name="date" content="2017-02-09" />
 
 <title>remBoot User Guide</title>
 
@@ -70,18 +70,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">remBoot User Guide</h1>
 <h4 class="author"><em>Anthony Caravaggi (<span class="citation">@thonoir</span>; arcaravaggi.co.uk)</em></h4>
-<h4 class="date"><em>2017-01-10</em></h4>
+<h4 class="date"><em>2017-02-09</em></h4>
 
 
 
-<div id="remboot-introduction" class="section level2">
-<h2>remBoot Introduction</h2>
-<p>remBoot is an implementation of the Random Encounter Model (REM) developed by Rowcliffe <em>et al.</em> (2008). The REM is based on brownian motion and allows the estimation of animal densities for a given survey area. The REM is particularly useful in that species do not need to be marked or exhibit individual markings for estimates to be calculated. This package contains a number of functions which allow the user to calculate densities for one or more sites and bootstrap their data to calculate variance.</p>
-</div>
-<div id="example" class="section level2">
-<h2>Example</h2>
 <p>Read the packaged data file. These data are from a study of hares in Northern Ireland, published as Caravaggi <em>et al.</em> (2016). The first 5 columns of any data set must follow the same format in terms of column contents.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(hDat)</code></pre></div>
+<pre><code>## Warning in data(hDat): data set 'hDat' not found</code></pre>
 <p>Alternatively, generate relevant simulated data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">remDat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(site &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span>:<span class="dv">4</span>, <span class="dv">200</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>),
                            cam &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span>:<span class="dv">20</span>, <span class="dv">200</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),
@@ -92,66 +87,66 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">colnames</span>(remDat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;site&quot;</span>,<span class="st">&quot;cam&quot;</span>, <span class="st">&quot;count&quot;</span>, <span class="st">&quot;dist&quot;</span>, <span class="st">&quot;theta&quot;</span>)</code></pre></div>
 <p>Now we’ll check the first few rows of data, check the sample size for each site, and check data consistency.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(hDat) </code></pre></div>
-<pre><code>##   site cam count  dist theta
-## 1    1   2     1 0.003  0.67
-## 2    1   2     1 0.003  0.67
-## 3    1   2     1 0.003  0.67
-## 4    1   3     1 0.004  0.39
-## 5    1   3     1 0.003  0.18
-## 6    1   3     1 0.005  0.10</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(hDat[,<span class="dv">4</span>], hDat[,<span class="dv">1</span>], length) </code></pre></div>
+<pre><code>##   site count  dist theta
+## 1    1     1 0.003  0.67
+## 2    1     1 0.003  0.67
+## 3    1     1 0.003  0.67
+## 4    1     1 0.004  0.39
+## 5    1     1 0.003  0.18
+## 6    1     1 0.005  0.10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(hDat[,<span class="dv">3</span>], hDat[,<span class="dv">1</span>], length) </code></pre></div>
 <pre><code>##  1  2  3  4  5 
 ## 36 16 20 19 27</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">tapply</span>(hDat[,<span class="dv">4</span>], hDat[,<span class="dv">1</span>], length)) ==<span class="st"> </span><span class="kw">nrow</span>(hDat) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">tapply</span>(hDat[,<span class="dv">3</span>], hDat[,<span class="dv">1</span>], length)) ==<span class="st"> </span><span class="kw">nrow</span>(hDat) </code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>We’ll use two functions to split the data according to survey site (<strong>split_dat</strong>) and store the number of rows. These data will be used for iterative resampling during bootstrapping.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grpDat &lt;-<span class="st"> </span><span class="kw">split_dat</span>(hDat)</code></pre></div>
 <p>Check that the code has done what we wanted</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lapply</span>(grpDat, head)</code></pre></div>
 <pre><code>## [[1]]
-##   site cam count  dist theta
-## 1    1   2     1 0.003  0.67
-## 2    1   2     1 0.003  0.67
-## 3    1   2     1 0.003  0.67
-## 4    1   3     1 0.004  0.39
-## 5    1   3     1 0.003  0.18
-## 6    1   3     1 0.005  0.10
+##   site count  dist theta
+## 1    1     1 0.003  0.67
+## 2    1     1 0.003  0.67
+## 3    1     1 0.003  0.67
+## 4    1     1 0.004  0.39
+## 5    1     1 0.003  0.18
+## 6    1     1 0.005  0.10
 ## 
 ## [[2]]
-##    site cam count  dist theta
-## 37    2   2     1 0.001  1.37
-## 38    2   2     1 0.006  0.06
-## 39    2   2     1 0.003  0.30
-## 40    2   5     1 0.002  0.18
-## 41    2   5     1 0.003  0.17
-## 42    2  10     1 0.005  0.51
+##    site count  dist theta
+## 37    2     1 0.001  1.37
+## 38    2     1 0.006  0.06
+## 39    2     1 0.003  0.30
+## 40    2     1 0.002  0.18
+## 41    2     1 0.003  0.17
+## 42    2     1 0.005  0.51
 ## 
 ## [[3]]
-##    site cam count  dist theta
-## 53    3   3     1 0.007  0.29
-## 54    3   3     1 0.006  0.24
-## 55    3   3     1 0.006  0.12
-## 56    3   3     1 0.005  0.19
-## 57    3   3     1 0.002  0.31
-## 58    3   3     1 0.004  0.16
+##    site count  dist theta
+## 53    3     1 0.007  0.29
+## 54    3     1 0.006  0.24
+## 55    3     1 0.006  0.12
+## 56    3     1 0.005  0.19
+## 57    3     1 0.002  0.31
+## 58    3     1 0.004  0.16
 ## 
 ## [[4]]
-##    site cam count  dist theta
-## 73    4   1     1 0.003  0.28
-## 74    4   1     1 0.007  0.18
-## 75    4   1     1 0.006  0.35
-## 76    4   5     1 0.002  0.14
-## 77    4   6     1 0.001  0.30
-## 78    4   6     1 0.003  0.50
+##    site count  dist theta
+## 73    4     1 0.003  0.28
+## 74    4     1 0.007  0.18
+## 75    4     1 0.006  0.35
+## 76    4     1 0.002  0.14
+## 77    4     1 0.001  0.30
+## 78    4     1 0.003  0.50
 ## 
 ## [[5]]
-##    site cam count  dist theta
-## 92    5   9     1 0.003  0.03
-## 93    5   9     1 0.002  0.10
-## 94    5   9     1 0.002  0.64
-## 95    5   9     1 0.006  0.19
-## 96    5  10     1 0.005  0.26
-## 97    5  10     1 0.006  0.20</code></pre>
+##    site count  dist theta
+## 92    5     1 0.003  0.03
+## 93    5     1 0.002  0.10
+## 94    5     1 0.002  0.64
+## 95    5     1 0.006  0.19
+## 96    5     1 0.005  0.26
+## 97    5     1 0.006  0.20</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lapply</span>(grpDat, nrow)</code></pre></div>
 <pre><code>## [[1]]
 ## [1] 36
@@ -191,49 +186,50 @@ v &lt;-<span class="st"> </span><span class="fl">0.89</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">remsSD &lt;-<span class="st"> </span><span class="kw">lapply</span>(remsD, sd)
 remsSD</code></pre></div>
 <pre><code>## [[1]]
-## [1] 0.3418794
+## [1] 0.3390757
 ## 
 ## [[2]]
-## [1] 0.669513
+## [1] 0.6558784
 ## 
 ## [[3]]
-## [1] 0.8307494
+## [1] 0.8615446
 ## 
 ## [[4]]
-## [1] 0.5919949
+## [1] 0.6028697
 ## 
 ## [[5]]
-## [1] 0.441105</code></pre>
-<p>Alternatively, we can forgo all the above and use the <strong>remBoot</strong> function to split and group data and calculate variance (SD and/or 95% confidence intervals) in one go. <strong>remBoot</strong> requires that all sites have the same values for tm and v. As before, we’ll define tm and v a priori:</p>
+## [1] 0.4468503</code></pre>
+<p>Alternatively, we can forgo all the above and use the <strong>remBoot</strong> function to split and group data and calculate variance (SD and/or 95% confidence intervals) in one go. <strong>remBoot</strong> requires that all sites have the same values for tm and v. As before, we’ll define <em>tm</em>, <em>v</em> and <em>nboots</em> a priori:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tm &lt;-<span class="st"> </span><span class="dv">1880</span>
-v &lt;-<span class="st"> </span><span class="fl">0.89</span></code></pre></div>
+v &lt;-<span class="st"> </span><span class="fl">0.89</span>
+nboots &lt;-<span class="st"> </span><span class="dv">1000</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output &lt;-<span class="st"> </span><span class="kw">remBoot</span>(hDat, tm, v, nboots, <span class="dt">error_stat =</span> <span class="kw">c</span>(<span class="st">&quot;sd&quot;</span>))
 output</code></pre></div>
 <pre><code>## $sd
 ## $sd[[1]]
-## [1] 0.3508025
+## [1] 0.3432775
 ## 
 ## $sd[[2]]
-## [1] 0.6470891
+## [1] 0.6463283
 ## 
 ## $sd[[3]]
-## [1] 0.8277096
+## [1] 0.8495
 ## 
 ## $sd[[4]]
-## [1] 0.6130968
+## [1] 0.5830725
 ## 
 ## $sd[[5]]
-## [1] 0.4232067</code></pre>
+## [1] 0.4472872</code></pre>
 <p>Alternatively, we could pass the values to the function directly.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output &lt;-<span class="st"> </span><span class="kw">remBoot</span>(hDat, <span class="dt">tm =</span> <span class="dv">2870</span>, <span class="dt">v =</span> <span class="fl">1.8</span>, nboots, <span class="dt">error_stat =</span> <span class="kw">c</span>(<span class="st">&quot;ci&quot;</span>))
 output</code></pre></div>
 <pre><code>## $ci
 ##         Lower    Upper
-## [1,] 6.197504 7.558100
-## [2,] 2.317376 4.641683
-## [3,] 4.327433 7.649994
-## [4,] 3.440855 5.697478
-## [5,] 3.805807 5.607069</code></pre>
+## [1,] 6.130465 7.512119
+## [2,] 2.245016 4.754074
+## [3,] 4.373940 7.801743
+## [4,] 3.478095 5.826832
+## [5,] 3.820658 5.611874</code></pre>
 <p>We can then collate our data into a single data frame and generate a simple bar plot with error bars to lok at relative differences between sites.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(estDat, <span class="kw">aes</span>(<span class="dt">x =</span> site, <span class="dt">y =</span> estDat$den)) +<span class="st">  </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="kw">position_dodge</span>(), <span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;light blue&quot;</span>) +<span class="st"> </span>
@@ -241,8 +237,7 @@ output</code></pre></div>
 <span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Survey site&quot;</span>) +
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Animals.km2&quot;</span>) +
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Animal density estimates calculated with REM and remBoot&quot;</span>)</code></pre></div>
-<p><img src="data:image/png;base64,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" alt /><!-- --></p>
-</div>
+<p><img src="data:image/png;base64,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" alt /><!-- --></p>
 <div id="references" class="section level2">
 <h2>References</h2>
 <p>Caravaggi, A et al. (2016) <a href="http://onlinelibrary.wiley.com/doi/10.1002/rse2.11/abstract">Remote Sensing in Ecology and Conservation</a> 2:45-58.</p>
