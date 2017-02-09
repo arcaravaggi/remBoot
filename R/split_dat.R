@@ -4,13 +4,17 @@
 #' 
 #' @param .df = the data frame
 #' @export
-#' @examples
+#' @examples 
 #' 
-#' split_dat <- function(.df) {
-#'   lapply(unique(.df[[1]]), grpDat_func, df = .df)
-#' }
+#' ## Read data:
+#' data(hDat)
 #' 
+#' ## Split data by survey site:
 #' grpDat <- split_dat(dat)
+#' 
+#' ## Check that function has performed correctly:
+#' lapply(grpDat, head)
+#' lapply(grpDat, nrow)
 
 
 split_dat <- function(.df) {
