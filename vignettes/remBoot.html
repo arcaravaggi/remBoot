@@ -221,7 +221,7 @@ output</code></pre></div>
 ## $sd[[5]]
 ## [1] 0.4472872</code></pre>
 <p>Alternatively, we could pass the values to the function directly.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output &lt;-<span class="st"> </span><span class="kw">remBoot</span>(hDat, <span class="dt">tm =</span> <span class="dv">2870</span>, <span class="dt">v =</span> <span class="fl">1.8</span>, nboots, <span class="dt">error_stat =</span> <span class="kw">c</span>(<span class="st">&quot;ci&quot;</span>))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output &lt;-<span class="st"> </span><span class="kw">remBoot</span>(hDat, <span class="dt">tm =</span> <span class="dv">2870</span>, <span class="dt">v =</span> <span class="fl">1.8</span>, <span class="dt">nboots = </span> <span class="dv">1000</span>, <span class="dt">error_stat =</span> <span class="kw">c</span>(<span class="st">&quot;ci&quot;</span>))
 output</code></pre></div>
 <pre><code>## $ci
 ##         Lower    Upper
