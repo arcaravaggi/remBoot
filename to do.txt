@@ -1,0 +1,5 @@
+Add documentation on handling NAs
+
+The user-facing functions perform little sanity-checking on input arguments and it seems like bad input might cause a result to be calculated that is non-sense (with no errors or warnings thrown). The JOSS review doesn't get into this level of detail on the code but I encourage the author to consider this if possible.
+
+Automated tests. No tests are present. Given the simplicity of this package, it shouldn't take much in the way of tests to provide -- at a minimum -- a small set of regression tests.
