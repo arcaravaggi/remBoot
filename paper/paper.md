@@ -39,6 +39,9 @@ Oliveira-Santos, L.G.R., Zucco, C.A., Antunes, P.C. and Crawshaw, P.G. (2010). I
 
 Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating animal density using camera traps without the need for individual recognition. J Appl Ecol. 45, 1228 – 1236. [DOI: 10.1111/j.1365-2664.2008.01473.x](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01473.x/abstract)
 
+##Acknowledgments
+
+Thanks to Kevin Keenan for his work on implementing REMs in R early on, when the language was still very new to me, and to Bryce Mecum (@amoeba) for his efforts in reviewing this package.
 
 
 ![REM diagram](REM_diagram.jpg)
