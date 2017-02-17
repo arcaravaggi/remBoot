@@ -32,11 +32,14 @@
 
 
 
-remBoot <- function(.df, tm, v, nboots, error_stat){
+remBoot2 <- function(.df, tm, v, nboots, error_stat){
   ## Written by Kevin Keenan 2013 and Anthony Caravaggi 2016
   ## distributed under GPL3
   grpDat <- split_dat(.df)
-  remsD <- lapply(grpDat, boot_sd)
+  remsD <- lapply(grpDat, function(x){
+    d <- replicate(nboots, bsD(x, tm, v)) 
+    return(d)
+  })
   res <- list()
   if(is.element("sd", error_stat)){
     resSD <- lapply(remsD, sd)
