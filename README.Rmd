@@ -1,6 +1,17 @@
-# remBoot: 
-Anthony Caravaggi  
-
+---
+title: "remBoot: "
+author: "Anthony Caravaggi"
+output:  
+      html_document:  
+        keep_md: TRUE 
+---
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+echo = TRUE, 
+fig.align = "center",
+fig.path = "figure/"
+)
+```
 
 # remBoot
 
@@ -8,56 +19,24 @@ remBoot is an implementation of the Random Encounter Model (REM) developed by Ro
 
 # Installation
 
-
-```r
+```{r install, eval = FALSE}
 devtools::install_github("arcaravaggi/remBoot")
 ```
 
 # Example
 
-
-```r
+```{r EG}
 data(hDat)  
 grpDat <- split_dat(hDat)  
 tm <- 3600  
 v <- 1.4  
 rem(dat = grpDat[[1]], tm = 3600, v = 1.4)  
-```
-
-```
-## [1] 2.249995
-```
-
-```r
 rem(dat = grpDat[[2]], tm = 3360, v = 1.4)  
-```
 
-```
-## [1] 1.153592
-```
-
-```r
 nboots <- 1000  
 remsD <- lapply(grpDat, boot_sd)   
 remsSD <- lapply(remsD, sd)  
 remsSD  
-```
-
-```
-## [[1]]
-## [1] 0.1101335
-## 
-## [[2]]
-## [1] 0.2176294
-## 
-## [[3]]
-## [1] 0.2867162
-## 
-## [[4]]
-## [1] 0.1963291
-## 
-## [[5]]
-## [1] 0.1496382
 ```
 
 A detailed example can be found in the [vignette][vig].
@@ -78,7 +57,7 @@ Please report it to the [issue tracker][issues]. Please provide specific details
 
 # References
 
-Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating animal density using camera traps without the need for individual recognition. J Appl Ecol. 45, 1228 â€“ 1236. [DOI: 10.1111/j.1365-2664.2008.01473.x](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01473.x/abstract)
+Rowcliffe, J.M., Field, J., Turvey, S.T. and Carbone, C. (2008). Estimating animal density using camera traps without the need for individual recognition. J Appl Ecol. 45, 1228 – 1236. [DOI: 10.1111/j.1365-2664.2008.01473.x](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2664.2008.01473.x/abstract)
 
 # License
 
