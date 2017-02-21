@@ -13,7 +13,8 @@
 #' remsD <- lapply(grpDat, boot_sd)
 #' remsSD <- lapply(remsD, sd)
 #' remsSD
-
+#' 
+#' @importFrom stats quantile sd
 
 boot_sd <-  function(x){
   d <- replicate(nboots, bsD(x, tm, v)) 
