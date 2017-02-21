@@ -20,11 +20,13 @@
 #' @examples
 #' ## Define tm, v and nboots and pass the values to the function:
 #' 
+#' data(hDat)  
+#' 
 #' tm <- 1800
 #' v <- 0.89
 #' nboots <- 1000
 #' 
-#' output <- remBoot(.df, tm, v, nboots, error_stat = c("sd"))
+#' output <- remBoot(hDat, tm, v, nboots, error_stat = c("sd"))
 #' 
 #' ## Alternatively, pass the values to the function, directly:
 #' 
@@ -32,7 +34,7 @@
 
 
 
-remBoot2 <- function(.df, tm, v, nboots, error_stat){
+remBoot <- function(.df, tm, v, nboots, error_stat){
   ## Written by Kevin Keenan 2013 and Anthony Caravaggi 2016
   ## distributed under GPL3
   grpDat <- split_dat(.df)

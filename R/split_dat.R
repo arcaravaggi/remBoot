@@ -10,7 +10,7 @@
 #' data(hDat)
 #' 
 #' ## Split data by survey site:
-#' grpDat <- split_dat(dat)
+#' grpDat <- split_dat(hDat)
 #' 
 #' ## Check that function has performed correctly:
 #' lapply(grpDat, head)

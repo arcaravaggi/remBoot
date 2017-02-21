@@ -7,11 +7,11 @@
 rem(dat, tm, v)
 }
 \arguments{
+\item{dat}{= the data frame}
+
 \item{tm}{(numeric) The total number of hours all cameras were left in-situ at a focal site}
 
 \item{v}{(numeric) The distance travelled by the focal species in 24 hours, in kilometres}
-
-\item{.df}{= the data frame}
 }
 \description{
 This function allows the automated calculation of animal densities.km2 using camera trap data and Random Encounter Modelling.

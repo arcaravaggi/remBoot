@@ -32,15 +32,17 @@ For an example of how to use remBoot, click (\href{http://htmlpreview.github.io/
 \examples{
 ## Define tm, v and nboots and pass the values to the function:
 
+data(hDat)  
+
 tm <- 1800
 v <- 0.89
 nboots <- 1000
 
-output <- remBoot(.df, tm, v, nboots, error_stat = c("sd"))
+output <- remBoot(hDat, tm, v, nboots, error_stat = c("sd"))
 
 ## Alternatively, pass the values to the function, directly:
 
-output <- remBoot(hDat, tm = 1800, v = 0.89, nboots, error_stat = c("ci"))
+output <- remBoot(hDat, tm = 1800, v = 0.89, nboots = 1000, error_stat = c("ci"))
 }
 \keyword{bootstrap}
 \keyword{density,}
