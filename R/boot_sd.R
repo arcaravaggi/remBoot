@@ -5,7 +5,11 @@
 #' @export
 #' @examples 
 #' ## Define the number of bootstrapping iterations and apply boot_sd to the data:
+#' tm <- 3600
+#' v <- 0.85
 #' nboots <- 1000
+#' 
+#' grpDat <- split_dat(hDat)
 #' remsD <- lapply(grpDat, boot_sd)
 #' remsSD <- lapply(remsD, sd)
 #' remsSD

@@ -129,7 +129,9 @@ $(document).ready(function () {
 </div>
 <div id="example" class="section level1">
 <h1>Example</h1>
-<pre class="r"><code>data(hDat)  
+<pre class="r"><code>library(remBoot)
+
+data(hDat)  
 grpDat &lt;- split_dat(hDat)  
 tm &lt;- 3600  
 v &lt;- 1.4  
@@ -142,19 +144,19 @@ remsD &lt;- lapply(grpDat, boot_sd)
 remsSD &lt;- lapply(remsD, sd)  
 remsSD  </code></pre>
 <pre><code>## [[1]]
-## [1] 0.1148988
+## [1] 0.1198064
 ## 
 ## [[2]]
-## [1] 0.2101214
+## [1] 0.2090603
 ## 
 ## [[3]]
-## [1] 0.2711225
+## [1] 0.272623
 ## 
 ## [[4]]
-## [1] 0.1958271
+## [1] 0.1945102
 ## 
 ## [[5]]
-## [1] 0.1460492</code></pre>
+## [1] 0.1496215</code></pre>
 <p>A detailed example can be found in the <a href="http://htmlpreview.github.io/?https://github.com/arcaravaggi/remBoot/blob/master/vignettes/remBoot.html">vignette</a>.</p>
 </div>
 <div id="development" class="section level1">

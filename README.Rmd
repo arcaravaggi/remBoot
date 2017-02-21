@@ -24,6 +24,8 @@ devtools::install_github("arcaravaggi/remBoot")
 # Example
 
 ```{r EG}
+library(remBoot)
+
 data(hDat)  
 grpDat <- split_dat(hDat)  
 tm <- 3600  
