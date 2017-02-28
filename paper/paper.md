@@ -20,7 +20,7 @@ bibliography: paper.bib
 
 #Summary
 
-The Random Encounter Model (REM) allows researchers to calculate population densities from camera trap data for species which do no exhibit individually-identifiable markings [@Rowcliffe2008] such as tapir (_Tapirus terrestris_; [@OliveiraSantos2010], pine marten (_Martes martes_; [@Manzo2012], and hares (_Lepus_ sp.; [@Caravaggi2016]).
+The Random Encounter Model (REM) allows researchers to calculate population densities from camera trap data for species which do not exhibit individually-identifiable markings [@Rowcliffe2008] such as tapir (_Tapirus terrestris_; [@OliveiraSantos2010], pine marten (_Martes martes_; [@Manzo2012], and hares (_Lepus_ sp.; [@Caravaggi2016]).
 
 Density (D) is linearly scaled with trapping rate, based on two biological variables and two camera characteristics: _g_ = average animal group size; _y_ = number of detections; _t_ = survey effort (i.e. camera hours); _v_ = average distance travelled by the species in 24 hours; _r_ = radial distance to the animal; and, _theta_ = zone of detection (Fig. 1; [@Rowcliffe2008]).
 
